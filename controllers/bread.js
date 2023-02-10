@@ -3,7 +3,9 @@ const router = require('express').Router()
 const Bread = require('../models/bread')
 
 router.get('/', function(req, res){
-    res.send(Bread)
+    res.render('index', {
+        breads: Bread
+    })
 })
 
 router.get('/:arrayIndex', function(req, res){
